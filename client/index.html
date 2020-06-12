@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>courses web-app</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>courses web-app</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app/actions.js"></script>
+    <script src="./app/view.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="./style.css">
+  <body>
+    <div class="row" id="root">
+      <div class="column" id="container">
+        <label>Select a table</label>
+        <select name="table" id="table">
+          <option value="artists">artists</option>
+          <option value="playlists">playlists</option>
+          <option value="songs">songs</option>
+        </select>
+        <div id="list"></div>
+      </div>
+      <div class="column" id="book">
+        <h2>Add new item</h2>
+        <form id="save-form">
+          <h4>Required Fields</h4>
+          <label>Table name:</label>
+          <select name="tableName" id="tableName">
+            <option value="artists">artists</option>
+            <option value="playlists">playlists</option>
+            <option value="songs">songs</option>
+          </select>
+          <br />
+          <label>Name: </label
+          ><input id="author" name="author" placeholder="author" type="text" />
+          <br />
+          <h4>Optional Fields</h4>
+          <label>Composer: </label
+          ><input
+            id="title"
+            name="title"
+            placeholder="title"
+            type="text"
+          /><br />
+          <label>Duration (in minutes): </label>
+          <input
+            id="time"
+            name="time"
+            placeholder="duration"
+            type="number"
+            min="1"
+          />
+          <br />
+          <label>Size (Kbytes): </label
+          ><input
+            id="size"
+            name="size"
+            placeholder="size"
+            type="number"
+            min="1000"
+          /><br />
+          <label>Price (pounds): </label
+          ><input
+            id="price"
+            name="price"
+            placeholder="price"
+            type="number"
+            min="0"
+          /><br />
 
-</head>
+          <button id="save-button">save item</button>
+        </form>
+      </div>
+    </div>
 
-<body>
-  <div id='root'></div>
-
-  <script src='./app/init.js'></script>
-</body>
-
+    <script src="./app/init.js"></script>
+  </body>
 </html>

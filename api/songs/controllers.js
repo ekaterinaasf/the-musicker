@@ -77,6 +77,7 @@ const controllers = {
   },
   delete: (req, res) => {
     const id = req.params.id;
+    console.log(id);
     let sql = `DELETE FROM tracks WHERE TrackId=${id}`;
     db.run(sql, (err, row) => {
       if (err) {
