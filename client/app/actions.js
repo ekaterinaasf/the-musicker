@@ -1,7 +1,7 @@
-const saveItem = (tableName, book) => {
+const saveItem = (tableName, item) => {
   fetch("/api/" + encodeURIComponent(tableName), {
     method: "POST",
-    body: JSON.stringify(book),
+    body: JSON.stringify(item),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
@@ -12,12 +12,12 @@ const saveItem = (tableName, book) => {
       }
       return res.json();
     })
-    .then((bookList) => {
-      renderList(bookList); //write
-      alert("New book is saved on the server");
+    .then((itemList) => {
+      renderList(itemList); //write
+      alert("New item is saved on the server");
     })
     .catch((err) => {
-      alert("Unable to save a book");
+      alert("Unable to save an item");
       console.error(err);
     });
 };
@@ -85,10 +85,10 @@ const deleteItem = (tableName, id) => {
     })
     .then((list) => {
       renderBookList(list); //write
-      alert("Book is deleted");
+      alert("Item is deleted");
     })
     .catch((err) => {
-      alert("Unable to delete the book");
+      alert("Unable to delete the item");
       console.error(err);
     });
 };
